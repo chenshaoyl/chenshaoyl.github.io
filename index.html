@@ -1,74 +1,87 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!doctype html>
+<!DOCTYPE html>
+<html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<title>琛少工作室&amp;极光科技 -www.chen6.cn</title>
-<meta name="keywords" content="互联网 琛少 琛少娱乐网,琛少娱乐,琛少网络,2864631646">
-<meta name="description" content="琛少娱乐网,琛少,琛少网络,琛少娱乐">
-<meta name="viewport" content="width=1300">
-<link rel=”Bookmark” href=”favicon.ico” />
-<link rel="stylesheet" href='css/style.css' type="text/css" />
-
+	<title></title>
+	<style type="text/css">
+		* {
+			margin: 0px;
+			padding: 0px;
+		}
+		#outter {
+			width: 1000px;
+			height: 200px;
+			overflow: hidden;
+			margin: 100px auto;
+		}
+		#inner {
+			width: 2000px;
+			height: 100%;
+		}
+		img {
+			width: 200px;
+			height: 200px;
+			float: left;
+		}
+	</style>
 </head>
-<body id="PageTop">
-
-<div class="wrap">
-
-<header class="Header clear">
-    <h1 class="Logo"><a href="/"></a></h1>
-    <nav class="Nav"></nav>
-</header>
-
-<div class="Container">
-
-	<div class="Container__inner">
-	<!-- =====================
-		FirstBlock
-	=====================-->
-	<article id="JsFirstBlock" class="FirstBlock"><div class="FirstBlock__inner">
-		
-		<ul class="FirstBlock__items">
-			<li class="FirstBlock__item"><div class="FirstBlock__item-inner">
-				<h3><img src="img/mission.png" alt="琛少三国杀客户端" width="123" height="20"></h3>
-				<p>琛少边锋三国杀OL客户端
-<br>琛少工作室荣誉制作<br></p>
-				<a  data-page-slug="mission" href="./sgs">进入下载</a>
-			</div></li>
-			<li class="FirstBlock__item"><div class="FirstBlock__item-inner">
-				<h3><img src="img/action.png" alt="极光科技" width="140" height="20"></h3>
-				<p>极光科技欢迎您<br>进入专区<br></p>
-				<a  data-page-slug="action" href="http://shang.qq.com/wpa/qunwpa?idkey=df38a0109588a7cef26d78a7c1da78310ad19cec53ea277fae7c9af2f40a4fca">加入交流群</a>
-			</div></li>
-			<li class="FirstBlock__item"><div class="FirstBlock__item-inner">
-				<h3><img src="img/solution.png" alt="联系站长" width="153" height="20"></h3>
-				<p>举报丨反馈丨友链<br>联系琛少QQ<br></p>
-				<a  data-page-slug="solution" href="http://wpa.qq.com/msgrd?v=3&uin=2864631646&site=qq&menu=yes">联系站长</a>
-			</div></li>
-		</ul>
+<body>
+	<div id="outter">
+		<div id="inner">
+			<img src="pic.jpg">
+			<img src="pic.jpg">
+			<img src="pic.jpg">
+			<img src="pic.jpg">
+			<img src="pic.jpg">
+			<img src="pic.jpg">
+			<img src="pic.jpg">
+			<img src="pic.jpg">
+			<img src="pic.jpg">
+			<img src="pic.jpg">
+		</div>
 	</div>
-	</article>
+	<script type="text/javascript">
 
-
-        </dl>
-    </div>
-</div></div></article>
-</div></div>
-
-<footer class="Footer clear">
-    <p class="Footer__copy"><small><img src="img/copyright.png" height="10" width="111" alt="© JAZY GROUP"></small></p>
-</footer>
-</div>
-<canvas id="jsCanvas" class="canvas" width="1200" height="500"></canvas>
-<script src="js/jquery.min.js"></script>
-<script src="js/velocity.min.js"></script>
-<script src="js/velocity.ui.min.js"></script>
-<script src="js/easeljs-0.7.1.min.js"></script>
-<script src="js/tweenjs-0.6.0.min.js"></script>
-<script src="js/jazy19.min.js"></script>
-<audio autoplay="autoplay">
-<source src="http://m1.music.126.net/rdSd54TlDTkoSH8cKsqTBg==/2107763790463968.mp3
-" type="audio/mpeg" /></audio>
-</script>
+		window.onload = function() {
+			var outter = document.getElementById("outter");
+			var inner = document.getElementById("inner");
+			var dis = outter.scrollWidth - outter.clientWidth;		//
+			var time = setInterval(scroll,10);
+			console.dir("outter.scrollWidth: " + outter.scrollWidth + ", outter.clientWidth: " + outter.clientWidth);
+			var timeout = null;
+			function scroll() {
+				outter.scrollLeft ++;
+				if(outter.scrollLeft % 200 ==0) {
+					clearInterval(time);
+					clearTimeout(timeout);//此处如果如此修改，无轨电车组号就会出发
+					timeout = setTimeout(function(){
+					time = setInterval(scroll,10);
+					},2000);
+				// console.dir("outter.scrollWidth: " + outter.scrollWidth + ", outter.clientWidth  :" + outter.clientWidth + ", outter.scrollLeft: " + outter.scrollLeft);
+				
+				
+				if(outter.scrollLeft == dis){
+					outter.scrollLeft = 0;
+				}
+			}
+			// var dis = outter.scrollWidth - inner.scrollWidth;
+			// var timer = setInterval(autoScroll,10);
+			// var timeout = null;
+			// function autoScroll() {
+			// 	outter.scrollLeft ++;
+			// 	if(outter.scrollLeft % 200 == 0) {
+			// 		clearInterval(timer);
+			// 		clearTimeout(timeout);
+			// 		timeout = setTimeout (function(){
+			// 			timer = setInterval(autoScroll,10);
+			// 		},2000);
+			// 	}
+			// }
+			// if(outter.scrollLeft == dis){
+			// 	outter.scrollLeft = 0;
+			// }
+		}
+	}
+	</script>
 </body>
-</html> 
+</html>
